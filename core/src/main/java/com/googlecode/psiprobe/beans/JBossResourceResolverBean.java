@@ -42,6 +42,7 @@ public class JBossResourceResolverBean implements ResourceResolver {
 
   protected Log logger = LogFactory.getLog(getClass());
 
+  @Override
   public MBeanServer getMBeanServer() {
     for (MBeanServer server : MBeanServerFactory.findMBeanServer(null)) {
       if ("jboss".equals(server.getDefaultDomain())
@@ -52,18 +53,22 @@ public class JBossResourceResolverBean implements ResourceResolver {
     return null;
   }
 
+  @Override
   public boolean supportsPrivateResources() {
     return false;
   }
 
+  @Override
   public boolean supportsGlobalResources() {
     return true;
   }
 
+  @Override
   public boolean supportsDataSourceLookup() {
     return false;
   }
 
+  @Override
   public List<ApplicationResource> getApplicationResources() throws NamingException {
 
     List<ApplicationResource> resources = new ArrayList<ApplicationResource>();
@@ -138,12 +143,14 @@ public class JBossResourceResolverBean implements ResourceResolver {
     return new ArrayList<ApplicationResource>();
   }
 
+  @Override
   public List<ApplicationResource> getApplicationResources(Context context,
       ContainerWrapperBean containerWrapper) throws NamingException {
     
     throw new UnsupportedOperationException("Not supported yet.");
   }
 
+  @Override
   public boolean resetResource(Context context, String resourceName,
       ContainerWrapperBean containerWrapper) throws NamingException {
     try {
@@ -166,6 +173,7 @@ public class JBossResourceResolverBean implements ResourceResolver {
     }
   }
 
+  @Override
   public DataSource lookupDataSource(Context context, String resourceName,
       ContainerWrapperBean containerWrapper) throws NamingException {
     throw new UnsupportedOperationException(

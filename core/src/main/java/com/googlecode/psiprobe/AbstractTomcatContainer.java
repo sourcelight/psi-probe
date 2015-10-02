@@ -60,6 +60,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * @return {@code} true if deployment was successful
    * @throws Exception if deployment fails spectacularly
    */
+  @Override
   public boolean installContext(String contextName) throws Exception {
     contextName = formatContextName(contextName);
     String contextFilename = formatContextFilename(contextName);
@@ -68,6 +69,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
     return findContext(contextName) != null;
   }
 
+  @Override
   public void stop(String name) throws Exception {
     Context ctx = findContext(name);
     if (ctx != null) {
@@ -75,6 +77,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
     }
   }
 
+  @Override
   public void start(String name) throws Exception {
     Context ctx = findContext(name);
     if (ctx != null) {
@@ -88,6 +91,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * @param contextName the context path
    * @throws Exception if undeployment fails spectacularly
    */
+  @Override
   public void remove(String contextName) throws Exception {
     contextName = formatContextName(contextName);
     Context ctx = findContext(contextName);
@@ -135,6 +139,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
     checkChanges(name);
   }
 
+  @Override
   public void installWar(String name, URL url) throws Exception {
     checkChanges(name);
   }
@@ -172,6 +177,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * @param name the context path
    * @return the context deployed to that path
    */
+  @Override
   public Context findContext(String name) {
     String safeName = formatContextName(name);
     if (safeName == null) {
@@ -191,6 +197,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * @param name the context name
    * @return the context name formatted as the container expects
    */
+  @Override
   public String formatContextName(String name) {
     if (name == null) {
       return null;
@@ -213,6 +220,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * @param contextName the context name
    * @return the filename stem for this context
    */
+  @Override
   public String formatContextFilename(String contextName) {
     if (contextName == null) {
       return null;
@@ -230,6 +238,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * 
    * @param context the context
    */
+  @Override
   public void discardWorkDir(Context context) {
     if (context instanceof StandardContext) {
       StandardContext standardContext = (StandardContext) context;
@@ -248,6 +257,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * @param jspName the JSP filename
    * @return the name of the JSP servlet
    */
+  @Override
   public String getServletFileNameForJsp(Context context, String jspName) {
     String servletName = null;
 
@@ -273,6 +283,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * @param summary the summary in which the output is stored
    * @param names the list of JSPs to compile
    */
+  @Override
   public void recompileJsps(Context context, Summary summary, List<String> names) {
     ServletConfig servletConfig = (ServletConfig) context.findChild("jsp");
     if (servletConfig != null) {
@@ -336,6 +347,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * @param summary the summary in which the output is stored
    * @param compile whether to compile all of the JSPs or not
    */
+  @Override
   public void listContextJsps(Context context, Summary summary, boolean compile) {
     ServletConfig servletConfig = (ServletConfig) context.findChild("jsp");
     if (servletConfig != null) {
@@ -402,6 +414,7 @@ public abstract class AbstractTomcatContainer implements TomcatContainer {
    * @param context the context
    * @return the context descriptor filename, or {@code null}
    */
+  @Override
   public File getConfigFile(Context context) {
     URL configUrl = context.getConfigFile();
     if (configUrl != null) {
