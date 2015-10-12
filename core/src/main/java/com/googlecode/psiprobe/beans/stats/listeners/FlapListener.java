@@ -43,18 +43,22 @@ public abstract class FlapListener extends ThresholdListener {
 
   protected abstract void belowThresholdNotFlapping(StatsCollectionEvent sce);
 
+  @Override
   protected void crossedAboveThreshold(StatsCollectionEvent sce) {
     statsCollected(sce, true, true);
   }
 
+  @Override
   protected void crossedBelowThreshold(StatsCollectionEvent sce) {
     statsCollected(sce, true, false);
   }
 
+  @Override
   protected void remainedAboveThreshold(StatsCollectionEvent sce) {
     statsCollected(sce, false, true);
   }
 
+  @Override
   protected void remainedBelowThreshold(StatsCollectionEvent sce) {
     statsCollected(sce, false, false);
   }

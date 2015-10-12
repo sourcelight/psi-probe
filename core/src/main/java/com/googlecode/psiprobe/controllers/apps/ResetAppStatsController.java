@@ -29,6 +29,7 @@ public class ResetAppStatsController extends NoSelfContextHandlerController {
     this.statsCollector = statsCollector;
   }
 
+  @Override
   protected void executeAction(String contextName) throws Exception {
     statsCollector.reset(contextName);
   }

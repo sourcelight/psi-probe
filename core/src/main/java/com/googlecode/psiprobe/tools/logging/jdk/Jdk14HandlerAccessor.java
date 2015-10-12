@@ -43,6 +43,7 @@ public class Jdk14HandlerAccessor extends AbstractLogDestination {
     return getLoggerAccessor().isRoot();
   }
 
+  @Override
   public String getName() {
     return getLoggerAccessor().getName();
   }
@@ -56,6 +57,7 @@ public class Jdk14HandlerAccessor extends AbstractLogDestination {
     this.index = index;
   }
 
+  @Override
   public String getLogType() {
     return "jdk";
   }

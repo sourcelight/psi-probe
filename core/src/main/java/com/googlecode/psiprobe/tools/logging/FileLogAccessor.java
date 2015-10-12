@@ -23,6 +23,7 @@ public class FileLogAccessor extends AbstractLogDestination {
   private String name;
   private File file;
 
+  @Override
   public String getName() {
     return name;
   }
@@ -36,6 +37,7 @@ public class FileLogAccessor extends AbstractLogDestination {
     return "stdout";
   }
 
+  @Override
   public String getLogType() {
     return "stdout";
   }

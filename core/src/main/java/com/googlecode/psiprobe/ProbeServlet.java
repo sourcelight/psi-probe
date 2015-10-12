@@ -34,10 +34,12 @@ public class ProbeServlet extends DispatcherServlet implements ContainerServlet 
 
   private Wrapper wrapper;
 
+  @Override
   public Wrapper getWrapper() {
     return wrapper;
   }
 
+  @Override
   public void setWrapper(Wrapper wrapper) {
     this.wrapper = wrapper;
     logger.info("setWrapper() called");

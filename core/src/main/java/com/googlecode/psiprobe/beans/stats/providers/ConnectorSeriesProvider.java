@@ -27,6 +27,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class ConnectorSeriesProvider extends AbstractSeriesProvider {
 
+  @Override
   public void populate(DefaultTableXYDataset dataset, StatsCollection statsCollection,
       HttpServletRequest request) {
 

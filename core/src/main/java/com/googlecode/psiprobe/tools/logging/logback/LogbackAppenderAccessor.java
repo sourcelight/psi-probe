@@ -42,6 +42,7 @@ public class LogbackAppenderAccessor extends AbstractLogDestination {
     return getLoggerAccessor().isRoot();
   }
 
+  @Override
   public String getName() {
     return getLoggerAccessor().getName();
   }
@@ -52,6 +53,7 @@ public class LogbackAppenderAccessor extends AbstractLogDestination {
    * 
    * @return the log type
    */
+  @Override
   public String getLogType() {
     return "logback";
   }

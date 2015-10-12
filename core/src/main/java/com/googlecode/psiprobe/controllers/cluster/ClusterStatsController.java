@@ -56,6 +56,7 @@ public class ClusterStatsController extends TomcatContainerController {
     this.collectionPeriod = collectionPeriod;
   }
 
+  @Override
   protected ModelAndView handleRequestInternal(HttpServletRequest request,
       HttpServletResponse response) throws Exception {
 

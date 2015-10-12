@@ -24,6 +24,7 @@ public abstract class AbstractStatsCollectionListener implements StatsCollection
   private String propertyCategory;
   private boolean enabled = true;
 
+  @Override
   public boolean isEnabled() {
     return enabled;
   }

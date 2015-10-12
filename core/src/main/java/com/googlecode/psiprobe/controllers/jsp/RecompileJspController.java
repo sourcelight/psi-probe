@@ -33,6 +33,7 @@ import javax.servlet.http.HttpSession;
  */
 public class RecompileJspController extends ContextHandlerController {
 
+  @Override
   protected ModelAndView handleContext(String contextName, Context context,
       HttpServletRequest request, HttpServletResponse response) throws Exception {
 

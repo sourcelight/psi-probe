@@ -224,6 +224,7 @@ public class StatsCollection implements InitializingBean, DisposableBean, Applic
   /**
    * Reads stats data from file on disk.
    */
+  @Override
   public synchronized void afterPropertiesSet() {
     int index = 0;
     Map<String, List<XYDataItem>> stats;
@@ -245,10 +246,12 @@ public class StatsCollection implements InitializingBean, DisposableBean, Applic
 
   }
 
+  @Override
   public void destroy() throws Exception {
     serialize();
   }
 
+  @Override
   public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
     WebApplicationContext wac = (WebApplicationContext) applicationContext;
     contextTempDir = (File) wac.getServletContext().getAttribute("javax.servlet.context.tempdir");

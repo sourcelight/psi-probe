@@ -451,6 +451,7 @@ public class LogResolverBean {
 
     protected static final char DELIM = '!';
 
+    @Override
     public final int compare(LogDestination o1, LogDestination o2) {
       String name1 = convertToString(o1);
       String name2 = convertToString(o2);
@@ -469,6 +470,7 @@ public class LogResolverBean {
       this.all = all;
     }
 
+    @Override
     protected String convertToString(LogDestination dest) {
       File file = dest.getFile();
       String fileName = (file == null ? "" : file.getAbsolutePath());
@@ -490,6 +492,7 @@ public class LogResolverBean {
 
   private static class LogSourceComparator extends LogComparator {
 
+    @Override
     protected String convertToString(LogDestination dest) {
       File file = dest.getFile();
       String fileName = (file == null ? "" : file.getAbsolutePath());

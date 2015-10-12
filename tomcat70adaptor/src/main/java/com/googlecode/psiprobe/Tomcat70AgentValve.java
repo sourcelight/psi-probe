@@ -36,10 +36,12 @@ public class Tomcat70AgentValve extends ValveBase {
     super(true);
   }
 
+  @Override
   public String getInfo() {
     return info;
   }
 
+  @Override
   public void invoke(Request request, Response response) throws IOException, ServletException {
     getNext().invoke(request, response);
 

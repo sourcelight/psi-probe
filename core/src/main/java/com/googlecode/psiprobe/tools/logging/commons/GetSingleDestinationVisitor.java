@@ -32,6 +32,7 @@ public class GetSingleDestinationVisitor extends LoggerAccessorVisitor {
     return destination;
   }
 
+  @Override
   public void visit(Log4JLoggerAccessor accessor) {
     LogDestination dest = accessor.getAppender(logIndex);
     if (dest != null) {
@@ -39,6 +40,7 @@ public class GetSingleDestinationVisitor extends LoggerAccessorVisitor {
     }
   }
 
+  @Override
   public void visit(Jdk14LoggerAccessor accessor) {
     LogDestination dest = accessor.getHandler(logIndex);
     if (dest != null) {

@@ -58,6 +58,7 @@ public class ListConnectorsController extends TomcatContainerController {
     this.includeRequestProcessors = includeRequestProcessors;
   }
 
+  @Override
   protected ModelAndView handleRequestInternal(HttpServletRequest request,
       HttpServletResponse response) throws Exception {
 

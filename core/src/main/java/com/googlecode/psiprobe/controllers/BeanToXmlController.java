@@ -37,6 +37,7 @@ public class BeanToXmlController extends AbstractController {
     this.xmlMarker = xmlMarker;
   }
 
+  @Override
   protected ModelAndView handleRequestInternal(HttpServletRequest request,
       HttpServletResponse response) throws Exception {
 

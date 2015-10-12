@@ -42,6 +42,7 @@ public class TomcatSlf4jLogbackAppenderAccessor extends AbstractLogDestination {
     return getLoggerAccessor().isRoot();
   }
 
+  @Override
   public String getName() {
     return getLoggerAccessor().getName();
   }
@@ -52,6 +53,7 @@ public class TomcatSlf4jLogbackAppenderAccessor extends AbstractLogDestination {
    * 
    * @return the log type
    */
+  @Override
   public String getLogType() {
     return "tomcatSlf4jLogback";
   }

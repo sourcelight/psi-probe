@@ -41,10 +41,12 @@ public class Log4JAppenderAccessor extends AbstractLogDestination {
     return getLoggerAccessor().isRoot();
   }
 
+  @Override
   public String getName() {
     return getLoggerAccessor().getName();
   }
 
+  @Override
   public String getLogType() {
     return "log4j";
   }

@@ -102,6 +102,7 @@ public class AsyncSocketFactory {
       this.sync = sync;
     }
 
+    @Override
     public void run() {
       try {
         socketWrapper.setSocket(new Socket(socketWrapper.getServer(), socketWrapper.getPort()));
@@ -129,6 +130,7 @@ public class AsyncSocketFactory {
       this.timeout = timeout;
     }
 
+    @Override
     public void run() {
       try {
         Thread.sleep(timeout);

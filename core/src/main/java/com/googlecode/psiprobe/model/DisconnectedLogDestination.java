@@ -57,54 +57,67 @@ public class DisconnectedLogDestination implements LogDestination, Serializable 
     this.validLevels = destination.getValidLevels();
   }
 
+  @Override
   public Application getApplication() {
     return application;
   }
 
+  @Override
   public boolean isRoot() {
     return root;
   }
 
+  @Override
   public boolean isContext() {
     return context;
   }
 
+  @Override
   public String getName() {
     return name;
   }
 
+  @Override
   public String getIndex() {
     return index;
   }
 
+  @Override
   public String getTargetClass() {
     return targetClass;
   }
 
+  @Override
   public String getConversionPattern() {
     return conversionPattern;
   }
 
+  @Override
   public File getFile() {
     return file;
   }
 
+  @Override
   public String getLogType() {
     return logType;
   }
 
+  @Override
   public long getSize() {
     return size;
   }
 
+  @Override
   public Timestamp getLastModified() {
     return lastModified;
   }
 
+  @Override
   public String getLevel() {
     return level;
   }
 
+  @Override
   public String[] getValidLevels() {
     return validLevels;
   }

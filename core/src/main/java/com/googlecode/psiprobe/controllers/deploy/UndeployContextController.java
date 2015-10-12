@@ -39,6 +39,7 @@ public class UndeployContextController extends ContextHandlerController {
     this.failureViewName = failureViewName;
   }
 
+  @Override
   protected ModelAndView handleContext(String contextName, Context context,
       HttpServletRequest request, HttpServletResponse response) throws Exception {
     try {

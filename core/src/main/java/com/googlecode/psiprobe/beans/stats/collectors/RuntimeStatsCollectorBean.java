@@ -30,6 +30,7 @@ public class RuntimeStatsCollectorBean extends AbstractStatsCollectorBean {
     this.runtimeInfoAccessorBean = runtimeInfoAccessorBean;
   }
 
+  @Override
   public void collect() throws Exception {
     RuntimeInformation ri = runtimeInfoAccessorBean.getRuntimeInformation();
     if (ri != null) {

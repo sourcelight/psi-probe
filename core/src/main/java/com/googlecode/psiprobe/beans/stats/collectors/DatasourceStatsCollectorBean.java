@@ -18,8 +18,6 @@ import com.googlecode.psiprobe.model.DataSourceInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import java.util.List;
-
 /**
  *
  * @author Mark Lewis
@@ -40,6 +38,7 @@ public class DatasourceStatsCollectorBean extends AbstractStatsCollectorBean {
     this.containerWrapper = containerWrapper;
   }
 
+  @Override
   public void collect() throws Exception {
     long currentTime = System.currentTimeMillis();
     if (containerWrapper == null) {

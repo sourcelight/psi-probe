@@ -86,6 +86,7 @@ public class ContainerListenerBean implements NotificationListener {
   /**
    * Handles creation and deletion of new "worker" threads.
    */
+  @Override
   public synchronized void handleNotification(Notification notification, Object object) {
     if (notification instanceof MBeanServerNotification) {
       ObjectName objectName = ((MBeanServerNotification) notification).getMBeanName();

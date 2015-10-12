@@ -30,10 +30,12 @@ public class GetAllDestinationsVisitor extends LoggerAccessorVisitor {
     return destinations;
   }
 
+  @Override
   public void visit(Log4JLoggerAccessor accessor) {
     destinations.addAll(accessor.getAppenders());
   }
 
+  @Override
   public void visit(Jdk14LoggerAccessor accessor) {
     destinations.addAll(accessor.getHandlers());
   }

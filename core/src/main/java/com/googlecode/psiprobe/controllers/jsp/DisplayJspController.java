@@ -31,6 +31,7 @@ public class DisplayJspController extends ContextHandlerController {
 
   public static final String SUMMARY_ATTRIBUTE = "jsp.summary";
 
+  @Override
   protected ModelAndView handleContext(String contextName, Context context,
       HttpServletRequest request, HttpServletResponse response) throws Exception {
     boolean compile = ServletRequestUtils.getBooleanParameter(request, "compile", false);

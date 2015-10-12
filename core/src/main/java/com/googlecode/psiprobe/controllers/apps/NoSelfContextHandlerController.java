@@ -39,6 +39,7 @@ public abstract class NoSelfContextHandlerController extends ContextHandlerContr
     this.passQueryString = passQueryString;
   }
 
+  @Override
   protected ModelAndView handleContext(String contextName, Context context,
       HttpServletRequest request, HttpServletResponse response) throws Exception {
 
